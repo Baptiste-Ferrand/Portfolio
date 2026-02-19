@@ -3,9 +3,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes gradientShift {
+  0%    { background-position: 0% 50%; }
+  10%   { background-position: 25% 75%; }
+  20%   { background-position: 50% 100%; }
+  30%   { background-position: 75% 75%; }
+  40%   { background-position: 100% 50%; }
+  50%   { background-position: 75% 25%; }
+  60%   { background-position: 50% 0%; }
+  70%   { background-position: 25% 25%; }
+  80%   { background-position: 0% 50%; }
+  90%   { background-position: 25% 75%; }
+  100%  { background-position: 0% 50%; }
+}
+
 :root {
   --radius: 0.5rem;
-  --background: oklch(1 0 180);
+  --background: oklch(99.107% 0.00011 271.152 / 0.541);
   --foreground: oklch(0.141 0.004 285.824);
   --muted: oklch(0.968 0.001 286.375);
   --muted-foreground: oklch(0.552 0.014 285.942);
@@ -29,11 +43,16 @@
   --chart-3: oklch(0.379 0.044 225.539);
   --chart-4: oklch(0.834 0.119 88.146);
   --chart-5: oklch(0.783 0.126 58.749);
+  --gradient-bg: linear-gradient(
+  135deg,
+  oklch(99% 0.002 271) 0%,
+  oklch(96% 0.012 16) 50%,
+  oklch(98% 0.006 293) 100%
+);
 }
 
 .dark {
   --radius: 0.5rem;
-  --background: oklch(51.961% 0.12112 22.171);
   --foreground: oklch(0.962 0 180);
   --muted: oklch(0.27 0 168.69);
   --muted-foreground: oklch(0.712 0.013 286.068);
@@ -57,18 +76,38 @@
   --chart-3: oklch(0.723 0.15 60.631);
   --chart-4: oklch(0.619 0.204 312.728);
   --chart-5: oklch(0.612 0.209 6.386);
+  --gradient-bg: linear-gradient(
+  135deg,
+  /* bleu */
+  /* oklch(17.499% 0.03332 21.007) 0%,
+    oklch(22% 0.06 250) 50%,
+    oklch(15% 0.04 270) 100%
+     */
+    /* vert */
+
+    oklch(17.499% 0.03332 21.007) 0%,
+    oklch(22% 0.06 180) 50%,
+    oklch(16% 0.04 200) 100% 
+
+    /* violet */
+        /* oklch(15% 0.04 300) 0%,
+    oklch(20% 0.07 280) 50%,
+    oklch(17.499% 0.03332 21.007) 100% */
+);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--gradient-bg);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  transition: background 1s ease;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
 }
 
@@ -104,7 +143,7 @@ button:focus-visible {
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -115,7 +154,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
