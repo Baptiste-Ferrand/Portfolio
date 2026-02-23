@@ -9,7 +9,6 @@ import ExperienceDialogComponent from '@/components/ExperienceDialog.vue'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 import { Plus } from 'lucide-vue-next'
 
-// --- Dialog ---
 const isDialogOpen = ref(false)
 const selectedItem = ref<ExperienceDialog | null>(null)
 
@@ -18,14 +17,12 @@ const openDialog = (dialog: ExperienceDialog) => {
   isDialogOpen.value = true
 }
 
-// --- Scroll Reveal ---
 const { observe } = useScrollReveal()
 
 const refTitle = ref<HTMLElement | null>(null)
 const refProfile = ref<HTMLElement | null>(null)
 const refSections = ref<HTMLElement[]>([])
 
-// ✅ Anti-doublon
 const setSection = (el: HTMLElement | null) => {
   if (el && !refSections.value.includes(el)) {
     refSections.value.push(el)
@@ -42,12 +39,10 @@ onMounted(() => {
 <template>
   <div class="max-w-3xl mx-auto px-4 py-12 flex flex-col gap-10">
 
-    <!-- 👋 Titre -->
     <div ref="refTitle" class="reveal divider flex flex-col gap-5">
       <h1>Bienvenue chez moi, retirer vos chaussures je vous prie 😊</h1>
     </div>
 
-    <!-- 🪪 Profil -->
     <div ref="refProfile" class="reveal border border-border rounded-xl overflow-hidden">
       <div class="flex items-start gap-6 p-6">
         <div class="shrink-0">
@@ -70,7 +65,6 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- 🔄 Sections -->
     <div
       v-for="(section, index) in sections"
       :key="index"
@@ -88,7 +82,6 @@ onMounted(() => {
         </Tooltip>
       </TooltipProvider>
 
-      <!-- ✅ div wrapper pour le ref au lieu de Item directement -->
       <div
         v-for="(item, itemIndex) in section.items"
         :key="itemIndex"
@@ -115,7 +108,6 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- 🪟 Dialog -->
     <ExperienceDialogComponent
       v-if="selectedItem"
       v-model:open="isDialogOpen"

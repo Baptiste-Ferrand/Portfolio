@@ -28,6 +28,11 @@ const router = createRouter({
           name: 'information',
           component: () => import('@/pages/Information.vue'),
         },
+        {
+          path: 'projects/track-and-train',
+          name: 'track-and-train',
+          component: () => import('@/pages/projects/Track&Train.vue'),
+        },
       ],
     },
   ],
