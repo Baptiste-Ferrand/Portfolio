@@ -264,9 +264,9 @@ export const profile = {
   name: 'Baptiste Ferrand',
   shortDescription: 'Attiré par le DevOps, je suis engagé et curieux, j\'aime automatiser et optimiser les workflows pour livrer des projets robustes, scalables et faciles à maintenir.',
   longDescription: `Passionné d’informatique depuis tout petit, j’ai toujours travaillé avec un ordinateur. Très jeune, j’ai commencé à coder en Lua à 13 ans pour modifier des addons de GMod 💪.
-J’ai ensuite décidé d’orienter mes études dans ce domaine : un bac, puis un BTS, et pourquoi pas continuer vers un bac+5…
-Aujourd’hui, je suis fraîchement diplômé et j’adore le développement. Mais qu’est-ce qui me plaît vraiment ? Souffrir ? 😄 Non, ce que j’aime par-dessus tout, c’est apprendre. J’aime concevoir des applications robustes et scalables, j’adore la partie optimisation et automatisation.
-J’aime travailler en équipe et monter en compétences, notamment sur des architectures complexes comme, par exemple, l’architecture hexagonale, qui est ma préférée.
-Ce que j’aime aussi, c’est voir un projet grandir de A à Z : le concevoir, le structurer, le déployer, optimiser son déploiement sur un ou plusieurs serveurs, mais aussi le sécuriser pour qu’il soit robuste et tienne la charge.
-Répondre à des exigences précises, relever des défis, me mettre en difficulté et en sortir vainqueur, peu importe le résultat final… c’est ça que j’aime dans le développement !`,
+  J’ai ensuite décidé d’orienter mes études dans ce domaine : un bac, puis un BTS, et pourquoi pas continuer vers un bac+5…
+  Aujourd’hui, je suis fraîchement diplômé et j’adore le développement. Mais qu’est-ce qui me plaît vraiment ? Souffrir ? 😄 Non, ce que j’aime par-dessus tout, c’est apprendre. J’aime concevoir des applications robustes et scalables, j’adore la partie optimisation et automatisation.
+  J’aime travailler en équipe et monter en compétences, notamment sur des architectures complexes comme, par exemple, l’architecture hexagonale, qui est ma préférée.
+  Ce que j’aime aussi, c’est voir un projet grandir de A à Z : le concevoir, le structurer, le déployer, optimiser son déploiement sur un ou plusieurs serveurs, mais aussi le sécuriser pour qu’il soit robuste et tienne la charge.
+  Répondre à des exigences précises, relever des défis, me mettre en difficulté et en sortir vainqueur, peu importe le résultat final… c’est ça que j’aime dans le développement !`,
 }

@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/dialog'
 import { Badge } from '@/components/ui/badge'
 
-// ✅ v-model:open pour suivre le pattern Vue 3
 const open = defineModel<boolean>('open', { required: true })
 
 defineProps<{
@@ -21,7 +20,6 @@ defineProps<{
   <Dialog v-model:open="open">
     <DialogContent class="sm:max-w-lg p-0 overflow-hidden">
 
-      <!-- 🔝 Header -->
       <DialogHeader class="p-6 pb-4 border-b border-border">
         <DialogTitle class="text-lg font-semibold">
           {{ data.title }}
@@ -32,14 +30,12 @@ defineProps<{
         </DialogDescription>
       </DialogHeader>
 
-      <!-- 📝 Description -->
       <div class="p-6 border-b border-border">
         <p class="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
           {{ data.description }}
         </p>
       </div>
 
-      <!-- 🛠️ Stacks -->
       <div class="p-6 flex flex-col gap-3">
         <span class="text-sm font-medium">Savoir Faire/Etre</span>
         <div class="flex flex-wrap gap-2">

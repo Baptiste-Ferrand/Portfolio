@@ -10,7 +10,6 @@ import {
   NavigationMenuList,
 } from '@/components/ui/navigation-menu'
 
-// --- Hide/Show header on scroll ---
 const isVisible = ref(true)
 const lastScrollY = ref(0)
 
@@ -25,13 +24,11 @@ const handleScroll = () => {
   }
   lastScrollY.value = currentScrollY
 
-  // --- Show footer when near bottom ---
   const scrollBottom = window.scrollY + window.innerHeight
   const pageHeight = document.documentElement.scrollHeight
-  isFooterVisible.value = scrollBottom >= pageHeight - 50 // 50px de marge
+  isFooterVisible.value = scrollBottom >= pageHeight - 50 
 }
 
-// --- Theme toggle ---
 const isDark = ref(document.documentElement.classList.contains('dark'))
 
 const toggleTheme = () => {
@@ -39,7 +36,6 @@ const toggleTheme = () => {
   document.documentElement.classList.toggle('dark', isDark.value)
 }
 
-// --- Footer visibility ---
 const isFooterVisible = ref(false)
 
 onMounted(() => window.addEventListener('scroll', handleScroll, { passive: true }))
@@ -47,7 +43,6 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
 <template>
-  <!-- Header -->
   <header
     :class="[
       'fixed top-0 left-0 right-0 z-50',
@@ -58,7 +53,6 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   >
     <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
 
-      <!-- 🔗 Navigation -->
       <div class="flex-1 flex justify-center">
         <NavigationMenu :viewport="false">
           <NavigationMenuList>
@@ -86,7 +80,6 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </NavigationMenu>
       </div>
 
-      <!-- 🌙☀️ Bouton theme -->
       <Button variant="ghost" size="icon" class="rounded-full" @click="toggleTheme">
         <Sun v-if="isDark" class="w-4 h-4" />
         <Moon v-else class="w-4 h-4" />
@@ -95,12 +88,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     </div>
   </header>
 
-  <!-- Contenu -->
   <main class="pt-16">
     <RouterView />
   </main>
 
-  <!-- 🔻 Footer -->
   <footer
     :class="[
       'fixed bottom-0 left-0 right-0 z-50',
@@ -111,12 +102,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   >
     <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
 
-      <!-- 📝 Copyright -->
       <span class="text-sm text-foreground/50">
         © {{ new Date().getFullYear() }} Baptiste Ferrand
       </span>
 
-      <!-- 🔗 Liens sociaux -->
       <div class="flex items-center gap-2">
         <Button variant="ghost" size="icon" class="rounded-full w-8 h-8" as-child>
           <a href="https://github.com/Baptiste-Ferrand" target="_blank" rel="noopener">
