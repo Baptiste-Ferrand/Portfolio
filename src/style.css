@@ -19,7 +19,7 @@
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(99.107% 0.00011 271.152 / 0.541);
+  --background: oklch(99.107% 0.00011 271.152);
   --foreground: oklch(0.141 0.004 285.824);
   --muted: oklch(0.968 0.001 286.375);
   --muted-foreground: oklch(0.552 0.014 285.942);
@@ -54,6 +54,9 @@
 .dark {
   --radius: 0.5rem;
   --foreground: oklch(0.962 0 180);
+  --background: oklch(17.43% 0.02881 264.715 / 0.877);
+  --card: oklch(17.499% 0.03332 21.007);            
+  --popover: oklch(17.499% 0.03332 21.007); 
   --muted: oklch(0.27 0 168.69);
   --muted-foreground: oklch(0.712 0.013 286.068);
   --popover: oklch(0.204 0 180);
@@ -79,15 +82,15 @@
   --gradient-bg: linear-gradient(
   135deg,
   /* bleu */
-  /* oklch(17.499% 0.03332 21.007) 0%,
+    oklch(17.499% 0.03332 21.007) 0%,
     oklch(22% 0.06 250) 50%,
     oklch(15% 0.04 270) 100%
-     */
+     
     /* vert */
 
-    oklch(17.499% 0.03332 21.007) 0%,
+    /* oklch(17.499% 0.03332 21.007) 0%,
     oklch(22% 0.06 180) 50%,
-    oklch(16% 0.04 200) 100% 
+    oklch(16% 0.04 200) 100% */
 
     /* violet */
         /* oklch(15% 0.04 300) 0%,
@@ -132,29 +135,12 @@ button:focus-visible {
   
 } 
 
-/* .card {
-  padding: 2em;
-} */
-
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
