@@ -32,6 +32,11 @@ const router = createRouter({
           path: 'projects/track-and-train',
           name: 'track-and-train',
           component: () => import('@/pages/projects/Track&Train.vue'),
+        },  
+        {
+          path: 'projects/wdwt',
+          name: 'wdwt',
+          component: () => import('@/pages/projects/WDWT.vue'),
         },
       ],
     },

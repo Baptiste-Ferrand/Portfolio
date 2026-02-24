@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { Github, BicepsFlexed } from 'lucide-vue-next'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { trackAndTrainSections, trackAndTrainLinks } from '@/data/track&train.data'
+import { wdwtSections, wdwtLinks } from '@/data/wdwt.data'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 
 const { observe } = useScrollReveal()
@@ -29,8 +29,8 @@ onMounted(() => {
 
     <div ref="refImage" class="reveal">
       <img
-        src="@/assets/Track&Train-logo.png"
-        alt="Track&Train"
+        src=""
+        alt="WDWT"
         class="w-full object-cover rounded-lg"
       />
     </div>
@@ -46,7 +46,7 @@ onMounted(() => {
           <div class="grid grid-cols-2 divide-x divide-border">
 
             <a
-              :href="trackAndTrainLinks.github"
+              :href="wdwtLinks.github"
               target="_blank"
               rel="noopener"
               class="flex flex-col items-center gap-3 p-6 hover:bg-accent/50 transition-colors"
@@ -56,7 +56,7 @@ onMounted(() => {
             </a>
 
             <a
-              :href="trackAndTrainLinks.website"
+              :href="wdwtLinks.website"
               target="_blank"
               rel="noopener"
               class="flex flex-col items-center gap-3 p-6 hover:bg-accent/50 transition-colors"
@@ -71,7 +71,7 @@ onMounted(() => {
     </div>
 
     <div
-      v-for="(section, index) in trackAndTrainSections"
+      v-for="(section, index) in wdwtSections"
       :key="index"
       :ref="(el) => setCard(el as HTMLElement)"
       :class="['reveal', `reveal-delay-${(index % 5) + 1}`]"

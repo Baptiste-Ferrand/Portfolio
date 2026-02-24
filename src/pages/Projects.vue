@@ -4,7 +4,6 @@ import { projects } from '@/data/projects.data'
 import ProjectCard from '@/components/ProjectCard.vue'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 
-// --- Scroll Reveal ---
 const { observe } = useScrollReveal()
 
 const refTitle = ref<HTMLElement | null>(null)
@@ -25,12 +24,10 @@ onMounted(() => {
 <template>
   <div class="max-w-3xl mx-auto px-4 py-12 flex flex-col gap-10">
 
-    <!-- 👋 Titre -->
     <div ref="refTitle" class="reveal">
       <h1>Mes projets</h1>
     </div>
 
-    <!-- 🗂️ Grille de cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div
         v-for="(project, index) in projects"

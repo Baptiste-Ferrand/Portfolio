@@ -9,14 +9,13 @@ export const projects: Project[] = [
   },
   {
     title: 'Portfolio',
-    description: 'Mon portfolio personnel développé avec Vue 3, TypeScript et Shadcn.',
+    description: 'Mon portfolio personnel développé a la main avec Vue 3, TypeScript et Shadcn. Ce project a pour but de présenter mes projets, mon parcours et mes compétences et de decouvrir shadcn.',
     to: '/',
   },
   {
     title: 'WDWT',
     description: `What Do We Take? - Est une application pour partager la liste de ces compléments alimentaires, ces entrainements sont plan nutritive et bien dautres encore.
     (ce project est actuellement en cours de développement)`,
-    to: '/projects/portfolio',
+    to: '/projects/wdwt',
   },
-
 ]
