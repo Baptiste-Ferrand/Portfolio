@@ -3,3 +3,8 @@ export interface Project {
   description: string
   to: string
 }
+
+export interface ProjectSection {
+  title: string
+  description: string
+}

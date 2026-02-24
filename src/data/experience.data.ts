@@ -1,18 +1,4 @@
-import type { ExperienceDialog } from '@/types/dialog'
-
-export interface SectionItem {
-  title: string
-  description: string
-  dialog: ExperienceDialog
-}
-
-export interface Section {
-  tooltip: {
-    trigger: string
-    content: string
-  }
-  items: SectionItem[]
-}
+import type { Section } from '@/types/dialog'
 
 export const sections: Section[] = [
   {

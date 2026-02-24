@@ -1,7 +1,4 @@
-export interface ProjectSection {
-  title: string
-  description: string
-}
+import type { ProjectSection } from '@/types/project'
 
 export const trackAndTrainSections: ProjectSection[] = [
   {
