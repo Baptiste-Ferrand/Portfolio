@@ -13,14 +13,13 @@ export function useScrollReveal() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('reveal-visible')
-            // ✅ On arrête d'observer une fois animé
             observer.value?.unobserve(entry.target)
           }
         })
       },
       {
-        threshold: 0.1,   // 10% de l'élément visible suffit
-        rootMargin: '0px 0px -50px 0px', // déclenche 50px avant le bas
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
       }
     )
   })
