@@ -38,8 +38,8 @@ jobs:
             EXTRA_TAG="latest"
           fi
 
-          DOCKER_TAG="ghcr.io/track-train/front:${TAG}"
-          DOCKER_EXTRA="ghcr.io/track-train/front:${EXTRA_TAG}"
+          DOCKER_TAG="ghcr.io/Baptiste-Ferrand/Portfolio:${TAG}"
+          DOCKER_EXTRA="ghcr.io/Baptiste-Ferrand/Portfolio:${EXTRA_TAG}"
           echo "DOCKER_TAGS=${DOCKER_TAG},${DOCKER_EXTRA}" >> $GITHUB_ENV
           echo "docker_tag=${DOCKER_TAG}" >> $GITHUB_OUTPUT
           echo "docker_extra=${DOCKER_EXTRA}" >> $GITHUB_OUTPUT
