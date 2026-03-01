@@ -1,4 +1,5 @@
 import type { Section } from '@/types/dialog'
+import profilePicture from '@/assets/PP.png'
 
 export const sections: Section[] = [
   {
@@ -246,7 +247,7 @@ export const sections: Section[] = [
 ]
 
 export const profile = {
-  image: '/src/assets/PP.png',
+  image: profilePicture,
   name: 'Baptiste Ferrand',
   shortDescription: 'Attiré par le DevOps, je suis engagé et curieux, j\'aime automatiser et optimiser les workflows pour livrer des projets robustes, scalables et faciles à maintenir.',
   longDescription: `Passionné d’informatique depuis tout petit, j’ai toujours travaillé avec un ordinateur. Très jeune, j’ai commencé à coder en Lua à 13 ans pour modifier des addons de GMod 💪.

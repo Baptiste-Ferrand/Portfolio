@@ -40,7 +40,7 @@ onMounted(() => {
   <div class="max-w-3xl mx-auto px-4 py-12 flex flex-col gap-10">
 
     <div ref="refTitle" class="reveal divider flex flex-col gap-5">
-      <h1>Bienvenue chez moi, retirer vos chaussures je vous prie 😊</h1>
+      <h1>Bienvenue chez moi</h1>
     </div>
 
     <div ref="refProfile" class="reveal border border-border rounded-xl overflow-hidden">

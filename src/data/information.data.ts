@@ -1,4 +1,8 @@
 import type { InformationSection } from '@/types/information'
+import hexagonalImg from '@/assets/hexagonal-architecture.png'
+import watchtowerImg from '@/assets/watchtower.png'
+
+
 
 export const informationSections: InformationSection[] = [
   {
@@ -20,7 +24,7 @@ export const informationSections: InformationSection[] = [
     La règle de dépendance
     Le cœur ne dépend pas des adapters/frameworks : il dépend seulement des ports (interfaces). Les adapters, eux, dépendent du cœur.
     Conséquence : changer de DB, de protocole (REST → messaging), ou de service tiers impacte surtout les adapters, pas la logique métier.`,
-    img: '/src/assets/hexagonal-architecture.png',
+    img: hexagonalImg,
     description2: `Avantages principaux
     Meilleure testabilité : le cœur métier est découplé des entrées/sorties (DB, HTTP, services). On peut tester les cas d’usage avec des mocks/fakes sans dépendre d’une infra réelle.
     Indépendance des frameworks : Spring/.NET/Nest/Django restent des outils “autour” du système, pas ce qui dicte la structure. On limite l’effet “verrouillage” technologique.
@@ -69,7 +73,7 @@ export const informationSections: InformationSection[] = [
     nettoyer les anciennes images,
     envoyer des notifications (Slack, email, webhook…),
     n’update que certains conteneurs et appliquer des stratégies (rolling, délais, etc. selon options).`,
-    img: '/src/assets/watchtower.png',
+    img: watchtowerImg,
     description2: `Avantages
     Mises à jour automatisées : les conteneurs se mettent à jour dès qu’une nouvelle image est disponible, ce qui fait gagner beaucoup de temps, notamment sur un serveur perso/VPS avec plusieurs services.
     Mise en place simple : pas besoin d’un orchestrateur complet (comme Kubernetes) pour automatiser les renouvellements de conteneurs.
