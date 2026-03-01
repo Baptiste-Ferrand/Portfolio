@@ -4,7 +4,7 @@ networks:
 
 services:
 
-  front:
+  portfolio-front:
     image: {{ front_image }}
     container_name: {{ front_container }}
     restart: unless-stopped
@@ -12,10 +12,10 @@ services:
       - "80"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.front.rule=Host(`{{ domain_front }}`)"
-      - "traefik.http.routers.front.entrypoints=websecure"
-      - "traefik.http.routers.front.tls.certresolver=letsencrypt"
-      - "traefik.http.services.front.loadbalancer.server.port=80"
+      - "traefik.http.routers.portfolio-front.rule=Host(`{{ domain_front }}`)"
+      - "traefik.http.routers.portfolio-front.entrypoints=websecure"
+      - "traefik.http.routers.portfolio-front.tls.certresolver=letsencrypt"
+      - "traefik.http.services.portfolio-front.loadbalancer.server.port=80"
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
       - {{ docker_network_name }}
