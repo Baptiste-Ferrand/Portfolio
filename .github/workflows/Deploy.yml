@@ -1,0 +1,43 @@
+name: 🚀 Ansible Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Mode check (dry-run)'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  ANSIBLE_HOST_KEY_CHECKING: "False"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install Ansible
+        run: pip install ansible
+
+      - name: 🔑 Load SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: 🚀 Deploy to server
+        working-directory: ansible
+        run: |
+          echo '${{ secrets.VAULT_PASSWORD }}' > vault_pass.txt
+          ansible-playbook -i hosts playbooks/site.yml \
+            --vault-password-file vault_pass.txt \
+            ${{ inputs.dry_run == 'true' && '--check' || '' }}
+          rm vault_pass.txt
