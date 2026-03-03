@@ -27,7 +27,7 @@ const contact = {
       </CardHeader>
 
       <CardContent class="p-0">
-        <div class="grid grid-cols-3 divide-x divide-border">
+        <div class="md:grid md:grid-cols-3 md:divide-x md:divide-border">
 
           <div class="flex flex-col items-center gap-6 p-8 text-center">
             <div class="w-24 h-24 rounded-xl bg-foreground/10 flex items-center justify-center">
