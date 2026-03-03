@@ -44,7 +44,7 @@ onMounted(() => {
     </div>
 
     <div ref="refProfile" class="reveal border border-border rounded-xl overflow-hidden">
-      <div class="flex items-start gap-6 p-6">
+      <div class="flex max-md:flex-wrap gap-6 p-6 content-center justify-center">
         <div class="shrink-0">
           <img
             :src="profile.image"
